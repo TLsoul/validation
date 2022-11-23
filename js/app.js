@@ -14,14 +14,14 @@ const checkUsername = () => {
     const min = 3,
     max = 25;
 
-    const username = usernameEl.value.trim();
+    const username = usernameE1.value.trim();
 
     if (!isRequired(username)) {
-        showError(usernameEl, 'Username cannot be blank.');
+        showError(usernameE1, 'Username cannot be blank.');
     } else if (!isBetween(username.length, min, max)) {
-        showError(usernameEl, 'Username must be between ${min} and ${max} characters.')
+        showError(usernameE1, 'Username must be between ${min} and ${max} characters.')
     } else {
-        showError(usernameEl);
+        showError(usernameE1);
         valid = true;
     }
     return valid;
@@ -29,13 +29,13 @@ const checkUsername = () => {
 
 const checkEmail = () => {
     let valid = false;
-    const email = emailEl.value.trim();
+    const email = emailE1.value.trim();
     if (!isRequired(email)) {
-        showError(emailEl, 'Email cannot be blank.')
+        showError(emailE1, 'Email cannot be blank.')
     } else if (!isEmailValid(email)) {
-        showError(emailEl, 'Email is not valid.')
+        showError(emailE1, 'Email is not valid.')
     } else {
-        showSuccess(emailEl);
+        showSuccess(emailE1);
         valid = true;
     }
     return valid;
@@ -45,15 +45,15 @@ const checkPassword = () => {
     let valid = false;
 
 
-    const password = passwordEl.value.trim();
+    const password = passwordE1.value.trim();
 
     if (!isRequired(password)) {
-        showError(passwordEl, 'Password cannot be blank.');
+        showError(passwordE1, 'Password cannot be blank.');
     } else if (!isPasswordSecure(password)) {
-        showError(passwordEl, 'Password must has at least 8 characters that include at least 1 lowercase'+
+        showError(passwordE1, 'Password must has at least 8 characters that include at least 1 lowercase'+
         'character, 1 uppercase characters, 1 number, and 1 special character in (!@#$^&8*)');
     } else {
-        showSuccess(passwordEl);
+        showSuccess(passwordE1);
         valid = true;
     }
 
